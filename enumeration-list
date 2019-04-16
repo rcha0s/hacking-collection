@@ -1,15 +1,15 @@
-My Enumeration List
+**My Enumeration List**
 	 - http://www.0daysecurity.com/penetration-testing/enumeration.html
 
 	Nmap 
-		○ Generic
-			§ nmap -A ipaddress
-			§ nmap -Pn -sT -T5 -sV 10.11.1.13
-			§ nmap -Pn -sU -sV 10.11.1.13
-			§ #shorter # nmap -sU --top-ports 200 -sV -Pn 10.11.1.71
-			§ # nmap -Pn -sT -sU -sV 10.11.1.13 - takes forever
-			§ unicornscan -mT 10.10.10.117
-			§ unicornscan -mU 10.10.10.117
+		- Generic
+			- nmap -A ipaddress
+			- nmap -Pn -sT -T5 -sV 10.11.1.13
+			- nmap -Pn -sU -sV 10.11.1.13
+			- #shorter # nmap -sU --top-ports 200 -sV -Pn 10.11.1.71
+			- # nmap -Pn -sT -sU -sV 10.11.1.13 - takes forever
+			- unicornscan -mT 10.10.10.117
+			- unicornscan -mU 10.10.10.117
 		○ Generic script
 			§ nmap -Pn -pPortsdiscovered --script=vuln,exploit 10.11.1.227
 		○ onetwopunch
@@ -135,13 +135,13 @@ My Enumeration List
 		○ dnsrecon -d megacorpone.com -t axfr
 
 
-Search exploits 
+**Search exploits**
 	• FIRST - Find version information 
 	• Use searchsploit
 	• Use metasploit
 	• Google!!
 
-Finding exploit code
+**Finding exploit code**
 	• http://www.exploit-db.com
 	• http://1337day.com
 	• http://www.securiteam.com
@@ -153,14 +153,15 @@ Finding exploit code
 	• http://www.google.com
 
 
-Finding more information regarding the exploit
+**Finding more information regarding the exploit**
 	• http://www.cvedetails.com
 	• http://packetstormsecurity.org/files/cve/[CVE]
 	• http://cve.mitre.org/cgi-bin/cvename.cgi?name=[CVE]
 	• http://www.vulnview.com/cve-details.php?cvename=[CVE]
 
 
-(Quick) "Common" exploits. Warning. Pre-compiled binaries files. Use at your own risk
+**(Quick) "Common" exploits**
+	- Warning. Pre-compiled binaries files. Use at your own risk.
 	• http://web.archive.org/web/20111118031158/http://tarantula.by.ru/localroot/
 	• http://www.kecepatan.66ghz.com/file/local-root-exploit-priv9/
 	
