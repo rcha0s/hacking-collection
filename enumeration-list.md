@@ -1,6 +1,6 @@
 **My Enumeration List**
 
-	##Nmap 
+	## Nmap 
 		- Generic
 			- nmap -A ipaddress
 			- nmap -Pn -sT -T5 -sV 10.11.1.13
@@ -62,14 +62,14 @@
 				§ SecList - /usr/share/seclists/
 			§ Gobuster limitation is that it does not go beyond level one brute forcing
 	
-	##SSH
+	## SSH
 		○ Banner and Key fingrprint grabbing
 			§ nmap -sT -Pn -p22 -sV --script=ssh-hostkey.nse 10.11.1.71
 			§ ssh -v root@10.11.1.71
 		§ SSH is known being 'stable' service - (which we know from researching CVEs).
 		§ Privesc - Add a new key to /home/<user>/.ssh/authorizedkeys and ssh as the user
 	
-	##FTP
+	## FTP
 		○ Authenticate Using anonymous login!
 			§ Web browse the entire directory structure
 			§ Try put, send and get 
@@ -77,7 +77,7 @@
 			§ nmap --script=ftp-anon.nse,ftp-bounce.nse,ftp-libopie.nse,ftp-proftpd-backdoor.nse,ftp-syst.nse,ftp-vsftpd-backdoor.nse,ftp-vuln-cve2010-4221.nse,tftp-enum.nse -p21,20 10.11.1.227
 		○ Use PASV mode in FTP when transferring files
 	
-	SMB
+	## SMB
 		○ enum4linux -a 10.11.1.8
 		○ rpcclient -U "" 10.11.1.227  --- Null Logon
 		○ nmap -sT -sU --script=smb* -p445,137,138,139 10.11.1.227
@@ -86,7 +86,7 @@
 			§ nmap -sT -sU --script smb-brute.nse,smb-double-pulsar-backdoor.nse,smb-enum-domains.nse,smb-enum-groups.nse,smb-enum-processes.nse,smb-enum-sessions.nse,smb-enum-shares.nse,smb-enum-users.nse,smb-flood.nse,smb-ls.nse,smb-mbenum.nse,smb-os-discovery.nse,smb-print-text.nse,smb-protocols.nse,smb-psexec.nse,smb-security-mode.nse,smb-server-stats.nse,smb-system-info.nse,smb-vuln-conficker.nse,smb-vuln-cve-2017-7494.nse,smb-vuln-cve2009-3103.nse,smb-vuln-ms06-025.nse,smb-vuln-ms07-029.nse,smb-vuln-ms08-067.nse,smb-vuln-ms10-054.nse,smb-vuln-ms10-061.nse,smb-vuln-ms17-010.nse,smb-vuln-regsvc-dos.nse,smb2-capabilities.nse,smb2-security-mode.nse,smb2-time.nse,smb2-vuln-uptime.nse -p445,137,138,139 10.11.1.227
 		○ Note: 138,137 - UDP, 137,139-TCP (netbios) and 445 -TCP 
 	
-	##SNMP 
+	## SNMP 
 		○ snmp-check -c public 10.11.1.227
 		○ ./snmpcheck-1.9.rb -c public 10.11.1.227
 		○ perl ../common/scripts/snmpcheck-1.8.pl -t 10.11.1.227 -c public
@@ -96,7 +96,7 @@
 		○ nmap -sT -p21,25 --script=smtp* 10.11.1.227
 			§ nmap -sT --script=smtp-brute.nse,smtp-commands.nse,smtp-enum-users.nse,smtp-ntlm-info.nse,smtp-open-relay.nse,smtp-strangeport.nse,smtp-vuln-cve2010-4344.nse,smtp-vuln-cve2011-1720.nse,smtp-vuln-cve2011-1764.nse -p21,25 10.11.1.227
 	
-	##POP3 
+	## POP3 
 		○ If you can login then [Using TELNET!]
 			§ USER user
 			§ PASS password
@@ -104,7 +104,7 @@
 			§ RETR 1
 		○ nmap -sT -p110,995 --script=pop3-capabilities,pop3-ntlm-info 192.168.37.67
 		
-	##SQL
+	## SQL
 		○ Search credentials in Web Application!!!
 		○ Find credentials and try authenticating to it
 			§ sqsh -D bankdb -U sa -P poiuytrewq -S 10.11.1.31
@@ -113,7 +113,7 @@
 		○ See ralph
 		○ Dig deeper in all Databases found!!
 	
-	##RPC
+	## RPC
 		○ nmap -sT -sU --script=msrpc-enum.nse,rpc-grind.nse,rpcap-info.nse,rpcinfo.nse,xmlrpc-methods.nse -p111 10.11.1.227
 		
 		MS DCE RPC 
@@ -125,11 +125,11 @@
 			§ rpcinfo -p 192.168.0.50  - query portmapper
 			§ nmap -sR 10.0.0.9 --- redundant now
 	
-	##JAVA RMI
+	## JAVA RMI
 		○ nmap -sS -p1100,49157,49200 -sV --script=rmi-dumpregistry 10.11.1.73
 		○ nmap -sS -p1100,49157,49200 -sV --script=rmi-vuln-classloader 10.11.1.73
 	
-	##DNS 
+	## DNS 
 		○ dnsrecon -d thinc.local -t zonewalk
 		○ dnsrecon -d megacorpone.com -t axfr
 
@@ -165,6 +165,6 @@
 	• http://www.kecepatan.66ghz.com/file/local-root-exploit-priv9/
 	
 	
-**Refernece enumeration lists**
+**Reference enumeration lists**
 	- http://www.0daysecurity.com/penetration-testing/enumeration.html
 
